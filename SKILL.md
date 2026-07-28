@@ -74,6 +74,11 @@ graph TD
 > [!CRITICAL]
 > **NEVER PUSH DIRECTLY TO `main` OR `master`**. All changes MUST be committed and pushed exclusively on a new feature/fix branch (`feature/<name>` or `fix/<name>`).
 
+> [!CAUTION]
+> **STRICT NO AUTO-MERGING RULE**:
+> **NEVER execute `gh pr merge`, `git merge`, or automatically merge Pull Requests.**
+> The AI agent MUST ONLY create the Pull Request via `gh pr create` and leave the PR OPEN. This allows GitHub Actions CI workflows to execute and pass 100%. The user will perform code review, verify CI results, and merge the PR manually.
+
 1. **Verify Workspace Path & User Git Identity** (MANDATORY):
    - Confirm active workspace directory.
    - Configure git user identity if required.
